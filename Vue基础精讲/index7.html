@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的条件渲染</title>
+    <script src="./vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <!-- 不存在dom中 -->
+        <!-- <div v-if="show">{{message}}</div>
+        <div v-else>Bye World</div> -->
+        <!-- 渲染出来了，display:none -->
+        <!-- <div v-show="show">{{message}}</div> -->
+        <!-- <div v-if = "show==='a'">This is A</div>
+        <div v-else-if = "show==='b'">This is B</div>
+        <div v-else>This is Others</div> -->
+        <div v-if="show">用户名：<input key="username"></div>
+        <div v-else>邮箱名：<input key="password"></div>
+    </div>
+    <script>
+        var vm = new Vue({
+          el:"#app",
+          data:{
+            //   show:"a",
+              show:false,
+            //   message:"Hello World"
+          }
+    })
+    </script>
+</body>
+</html>
