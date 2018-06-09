@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在Vue中同时使用过渡和动画</title>
+    <script src="./vue.js"></script>
+    <script src="./velocity.min.js"></script>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div id="root">
+        <transition name="fade" 
+        @before-enter="handleBeforeEnter"
+        @enter="handleEnter"
+        @after-enter="handleAfterEnter"
+        >
+            <div v-show="show">hello world</div>
+        </transition>
+        <button @click="handleClick">toggle</button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#root',
+        data:{
+            show:true
+        },
+        methods:{
+            handleClick:function(){
+                this.show = !this.show
+            },
+            handleBeforeEnter:function(el){
+                el.style.opacity = 0;
+            },
+            handleEnter:function(el,done){
+               Velocity(el,{
+                   opacity:1
+                   },{
+                    duration:1000,
+                    complete:done
+                    })
+            },
+            handleAfterEnter:function(el){
+                alert("动画结束")
+            }
+        }
+    })
+</script>
+</html>
