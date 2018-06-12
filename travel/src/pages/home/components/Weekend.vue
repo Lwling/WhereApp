@@ -1,13 +1,14 @@
 <template>
     <div>
-        <div class="title">热销推荐</div>
+        <div class="title">周末去哪儿</div>
         <ul>
             <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+                <div class="item-img-wrapper">   
                 <img class="item-img" :src="item.imgUrl">
+                </div>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
-                    <button class="item-button">查看详情</button>
                 </div>
             </li>
         </ul>
@@ -15,27 +16,28 @@
 </template>
 <script>
 export default {
-    name:'HomeRecommend',
+    name:'HomeWeekend',
     data(){
          return{
              recommendList:[{
              id:'0001',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
+             imgUrl:'http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg',
+             title:'橘子洲头',
              desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
          },{
              id:'0002',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
+             imgUrl:'http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg',
+             title:'橘子洲头',
              desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
          },{
              id:'0003',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
+             imgUrl:'http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg',
+             title:'橘子洲头',
              desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
          },{
              id:'0004',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
+             imgUrl:'http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg',
+             title:'橘子洲头',           
              desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
          }]
          }
@@ -44,43 +46,30 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
-    .title{
+    .title
         margin-top:.2rem
         line-height:.8rem
         background :#eee
         text-indent:.2rem
-    }
-    .item{
+
+    .item-img-wrapper
         overflow:hidden
-        display:flex
-        height 1.9rem
-        .item-img{
-            width:1.7rem
-            height:1.7rem
+        height:0
+        padding-bottom:33.9%
+
+        .item-img
+            width:100%
+
+        .item-info
             padding:.1rem
-        }
-        .item-info{
-            flex:1
-            padding:.1rem
-            min-width:0
-            .item-title{
+            .item-title
                 line-height:.54rem
                 font-size:.32rem
                 ellipsis()
-            }
-            .item-desc{
+            
+            .item-desc
                 line-height:.4rem
                 color:#ccc
                 ellipsis()
-            }
-            .item-button{
-                line-height:.44rem
-                margin-top:.16rem
-                background #ff9300
-                padding:0 .2rem
-                border-radius:.06rem
-                color:#fff
-            }
-        }
-    }
+            
 </style>
