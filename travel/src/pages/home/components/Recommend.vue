@@ -2,7 +2,7 @@
     <div>
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -15,30 +15,9 @@
 </template>
 <script>
 export default {
-    name:'HomeRecommend',
-    data(){
-         return{
-             recommendList:[{
-             id:'0001',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
-             desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-         },{
-             id:'0002',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
-             desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-         },{
-             id:'0003',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             title:'靖港古镇',
-             desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-         },{
-             id:'0004',
-             imgUrl:'http://img1.qunarzz.com/sight/p0/1412/68/42da26a54c27a3c237b4d10a61583c36.water.jpg_200x200_a38c904d.jpg',
-             desc:'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-         }]
-         }
+    name: 'HomeRecommend',
+    props:{
+        list:Array
     }
 }
 </script>
